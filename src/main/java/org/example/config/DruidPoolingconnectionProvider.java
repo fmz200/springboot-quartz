@@ -11,8 +11,8 @@ import java.sql.SQLException;
 /**
  * 使用阿里的druid作为数据库连接池
  *
- *@Author: fmz200
- *@Date: 2023-02-28 21:36
+ * @Author: fmz200
+ * @Date: 2023-02-28 21:36
  */
 @Data
 public class DruidPoolingconnectionProvider implements ConnectionProvider {
@@ -72,7 +72,7 @@ public class DruidPoolingconnectionProvider implements ConnectionProvider {
             throw new SQLException("DBPool maxConnections could not be created: Max connections must be greater than zero!");
         }
         datasource = new DruidDataSource();
-        try{
+        try {
             datasource.setDriverClassName(this.driver);
         } catch (Exception e) {
             try {
@@ -89,7 +89,7 @@ public class DruidPoolingconnectionProvider implements ConnectionProvider {
         datasource.setMaxPoolPreparedStatementPerConnectionSize(DEFAULT_DB_MAX_CONNECTIONS);
         if (this.validationQuery != null) {
             datasource.setValidationQuery(this.validationQuery);
-            if(!this.validateOnCheckout)
+            if (!this.validateOnCheckout)
                 datasource.setTestOnReturn(true);
             else
                 datasource.setTestOnBorrow(true);

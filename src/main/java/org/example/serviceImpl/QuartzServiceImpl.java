@@ -61,7 +61,7 @@ public class QuartzServiceImpl implements QuartzService {
             scheduler.start();
             scheduler.scheduleJob(jobDetail, trigger);
         } catch (Exception e) {
-            log.info("创建定时任务失败" + e);
+            log.info("创建定时任务失败{}", String.valueOf(e));
         }
     }
 

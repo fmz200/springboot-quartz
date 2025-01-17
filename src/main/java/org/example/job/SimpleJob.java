@@ -3,7 +3,6 @@ package org.example.job;
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
 import org.quartz.JobKey;
 import org.quartz.PersistJobDataAfterExecution;
 import org.slf4j.Logger;
@@ -24,9 +23,9 @@ public class SimpleJob implements Job {
     private JobKey jobkey = null;
 
     @Override
-    public void execute(JobExecutionContext context) throws JobExecutionException {
+    public void execute(JobExecutionContext context) {
         jobkey = context.getJobDetail().getKey();
-        log.info("开始执行SimpleJob。。。。。。。。。。。。。。。。。。。。。。");
+        log.info("开始执行SimpleJob");
         log.info("Excuting job: " + jobkey + " executing at " + new Date() + " fire by: " + context.getTrigger().getKey());
 
         if (context.getMergedJobDataMap().size() > 0) {

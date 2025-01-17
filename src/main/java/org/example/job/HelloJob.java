@@ -20,7 +20,7 @@ public class HelloJob implements Job {
     public void execute(JobExecutionContext jobExecutionContext) {
         QuartzService quartzService = (QuartzService) SpringUtil.getBean("quartzServiceImpl");
         PageInfo<JobAndTriggerDto> jobAndTriggerDetails = quartzService.getJobAndTriggerDetails(1, 10);
-        log.info("任务列表总数为：" + jobAndTriggerDetails.getTotal());
-        log.info("Hello Job执行时间: " + DateUtil.now());
+        log.info("任务列表总数为：{}", jobAndTriggerDetails.getTotal());
+        log.info("Hello Job执行时间: {}", DateUtil.now());
     }
 }

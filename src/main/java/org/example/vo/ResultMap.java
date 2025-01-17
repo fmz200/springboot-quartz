@@ -3,9 +3,9 @@ package org.example.vo;
 import java.util.HashMap;
 
 /**
- *@ClassName: ResponseMap
- *@Author: fmz200
- *@Date: 2023-02-28 11:25
+ * @ClassName: ResponseMap
+ * @Author: fmz200
+ * @Date: 2023-02-28 11:25
  */
 public class ResultMap extends HashMap<String, Object> {
 
